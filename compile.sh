@@ -28,6 +28,8 @@ rm -rf drivers/kernelsu
 ln -s ../../KernelSU/kernel drivers/kernelsu
 cp ../susfs4ksu/kernel_patches/fs/* fs/
 cp ../susfs4ksu/kernel_patches/include/linux/* include/linux/
+sed -i 's/CONFIG_LOCALVERSION="-rethinking"/CONFIG_LOCALVERSION="-ahmos"/' arch/arm64/configs/gki_defconfig
+sed -i 's/ZIP_PREFIX="rethinking-GKI"/ZIP_PREFIX="ahmos-GKI"/' compile.sh
 make clean
 find . -type d -name 'anykernel*' -prune -exec rm -rf -- {} +
 
