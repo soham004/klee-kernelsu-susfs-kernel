@@ -28,5 +28,7 @@ rm -rf drivers/kernelsu
 ln -s ../../KernelSU/kernel drivers/kernelsu
 cp ../susfs4ksu/kernel_patches/fs/* fs/
 cp ../susfs4ksu/kernel_patches/include/linux/* include/linux/
+make clean
+find . -type d -name 'anykernel*' -prune -exec rm -rf -- {} +
 
 ./compile.sh KSU '' ''
