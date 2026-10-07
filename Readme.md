@@ -15,19 +15,26 @@ environment.
 Clone the repository and its submodules:
 
 ```bash
-git clone --recurse-submodules \
+git clone \
     https://github.com/soham004/klee-kernelsu-susfs-kernel.git \
     klee-kernelsu-susfs-kernel
 cd klee-kernelsu-susfs-kernel
 ```
+### 2. Initialize Submodules 
 
-### 2. Build the Docker image
+```bash
+git submodule update --init --depth=1 common
+git submodule update --init KernelSU
+git submodule update --init susfs4ksu
+```
+
+### 3. Build the Docker image
 
 ```bash
 docker build -t klee-kernel-builder -f Dockerfile .
 ```
 
-### 3. Start the build container
+### 4. Start the build container
 
 Mount the repository into the container and start an interactive shell:
 
@@ -39,7 +46,7 @@ docker run --rm -it \
     bash
 ```
 
-### 4. Build the kernel
+### 5. Build the kernel
 
 Run the following commands inside the container. The script applies the
 required KernelSU and SUSFS patches before starting the kernel build.
