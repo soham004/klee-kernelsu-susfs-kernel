@@ -24,9 +24,9 @@ echo "All dependencies (Docker & Git) are installed!"
 
 git clone https://github.com/soham004/klee-kernelsu-susfs-kernel.git
 cd klee-kernelsu-susfs-kernel
-git submodule update --init --depth=1 common
-git submodule update --init KernelSU
-git submodule update --init susfs4ksu
+git submodule update --init --depth=1 --verbose common
+git submodule update --init --verbose KernelSU
+git submodule update --init --verbose susfs4ksu
 
 docker build -t klee-kernel-builder -f Dockerfile .
 

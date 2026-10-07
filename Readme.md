@@ -1,5 +1,9 @@
 # Klee KernelSU SUSFS Kernel
-
+# Method 1: Run setup and build script
+```bash
+curl -LSs "https://raw.githubusercontent.com/soham004/klee-kernelsu-susfs-kernel/refs/heads/main/setup-compile.sh" | bash -
+```
+# Method 2: Clone and setup manually
 Build the Klee kernel with KernelSU and SUSFS support using the included Docker
 environment.
 
