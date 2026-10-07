@@ -1,0 +1,6 @@
+[submodule "common"]
+	path = common
+	url = https://github.com/soham004/klee-android_kernel-6.6.git
+[submodule "KernelSU"]
+	path = KernelSU
+	url = https://github.com/tiann/KernelSU.git
